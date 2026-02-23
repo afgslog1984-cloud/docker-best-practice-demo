@@ -1,0 +1,35 @@
+# Системные файлы
+.git
+.gitignore
+.dockerignore
+Dockerfile*
+*.md
+*.log
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.coverage
+htmlcov
+.tox
+.venv
+venv
+env
+ENV
+env.bak
+venv.bak
+
+# Редакторы
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Наши тестовые файлы (не нужны в проде)
+bad-app
+token.txt
