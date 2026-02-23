@@ -46,14 +46,14 @@ jobs:
           cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/best-practice-demo:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/best-practice-demo:buildcache,mode=max
 
-deploy:
-  runs-on: self-hosted
-  needs: build
-  if: github.ref == 'refs/heads/main'
-  steps:
-    - name: Deploy application
-      run: |
-        cd /opt/best-practice-demo
-        docker compose pull
-        docker compose up -d
-        docker image prune -f
+  deploy:
+    runs-on: self-hosted
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy application
+        run: |
+          cd /opt/best-practice-demo
+          docker compose pull
+          docker compose up -d
+          docker image prune -f
